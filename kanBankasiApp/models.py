@@ -22,3 +22,5 @@ class Hastane(models.Model):
 	def __str__(self):
 		return self.hastane_adi
 
+class Rol(models.Model):
+	rol_adi = models.CharField(max_length = 20)
