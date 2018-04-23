@@ -24,3 +24,9 @@ class Hastane(models.Model):
 
 class Rol(models.Model):
 	rol_adi = models.CharField(max_length = 20)
+
+class KanGrubu(models.Model):
+	KanGrubu_adi = models.CharField(max_length = 20)
+
+	def __str__(self):
+		return self.KanGrubu_adi
