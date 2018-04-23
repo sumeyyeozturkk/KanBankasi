@@ -30,3 +30,17 @@ class KanGrubu(models.Model):
 
 	def __str__(self):
 		return self.KanGrubu_adi
+
+class Kullanici(models.Model):
+	user = models.OneToOneField(User, on_delete=models.CASCADE)
+	ad = models.CharField(max_length = 20)
+	soyad = models.CharField(max_length = 20)
+	dogum_tarihi = models.DateField(null=True, blank=True)
+	BOOL_CHOICES = ((True, 'Erkek'), (False, 'Kadın'))
+	cinsiyet = models.NullBooleanField(choices=BOOL_CHOICES, blank=True, null=True)
+	telefon = models.CharField(max_length=11)
+	il_id = models.ForeignKey(Il, on_delete= models.PROTECT)
+	ilce_id = models.ForeignKey(Ilce, on_delete = models.PROTECT)
+	kanGrubu_id = models.ForeignKey(KanGrubu, on_delete = models.PROTECT)
+	rol_id = models.ForeignKey(Rol, on_delete = models.PROTECT)
+
