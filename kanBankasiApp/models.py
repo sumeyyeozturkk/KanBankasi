@@ -15,8 +15,10 @@ class Ilce(models.Model):
 	def __str__(self):
 		return self.ilce_adi
 
+class Hastane(models.Model):
+	hastane_adi = models.CharField(max_length = 100)
+	ilce_id = models.ForeignKey(Ilce, on_delete = models.PROTECT)
 
-
-
-
+	def __str__(self):
+		return self.hastane_adi
 
