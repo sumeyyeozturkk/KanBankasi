@@ -49,3 +49,13 @@ class Stok(models.Model):
 	hastane_id = models.ForeignKey(Hastane, on_delete = models.PROTECT)
 	kanGrubu_id = models.ForeignKey(KanGrubu, on_delete = models.PROTECT)
 
+class Duyuru(models.Model):
+	duyuru_tarih = models.DateTimeField(null = True, blank=True)
+	aciklama = models.TextField()
+	il_id = models.ForeignKey(Il, on_delete= models.PROTECT)
+	ilce_id = models.ForeignKey(Ilce, on_delete = models.PROTECT)
+	kanGrubu_id = models.ForeignKey(KanGrubu, on_delete = models.PROTECT)
+	kullanici_id = models.ForeignKey(User,on_delete = models.PROTECT)
+
+
+
