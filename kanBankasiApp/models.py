@@ -44,3 +44,8 @@ class Kullanici(models.Model):
 	kanGrubu_id = models.ForeignKey(KanGrubu, on_delete = models.PROTECT)
 	rol_id = models.ForeignKey(Rol, on_delete = models.PROTECT)
 
+class Stok(models.Model):
+	stokMiktari = models.IntegerField(default = 0)
+	hastane_id = models.ForeignKey(Hastane, on_delete = models.PROTECT)
+	kanGrubu_id = models.ForeignKey(KanGrubu, on_delete = models.PROTECT)
+
