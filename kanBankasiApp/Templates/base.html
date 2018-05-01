@@ -15,14 +15,24 @@
         <div class="container">
           <div class="navbar-header">
 
-            <a class="navbar-brand" href="#">
-              Welcome to us !
+            <a class="navbar-brand" href="#">KAN BANKASI</a>
+              Kan bağışı hayat kurtarır!
             </a>
           </div>
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
 
             </ul>
+            <ul class="navbar-nav mr-auto navbar-right" style="margin-right: 0px;margin-left:850px;">
+      {% if not user.is_authenticated %}
+      <li class="nav-item active">
+        <a class="nav-link" href={% url "signup" %}><span class="glyphicon glyphicon-user" style="font-size: 20px;"></span>Kişisel Kayıt Ol</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href={% url "login" %}><span class="glyphicon glyphicon-log-in" style="font-size: 20px;"></span>Giriş Yap</a>
+      </li>
+      {%endif%}
+    </ul>
           </div>
         </div>
       </nav>
