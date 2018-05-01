@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'kanBankasiApp',
+    'bootstrap3',
 ]
 
 MIDDLEWARE = [
@@ -77,7 +78,7 @@ WSGI_APPLICATION = 'kanBankasi.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE':'django.db.backends.postgresql',
-        'NAME': 'KanBankasi',
+        'NAME': 'kanbankasi',
         'USER': 'postgres',
         'PASSWORD': 'postgres',
         'HOST': 'localhost',
