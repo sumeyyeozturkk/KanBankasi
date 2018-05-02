@@ -10,18 +10,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Free Bootstrap Themes designed by Zerotheme.com" />	
 	 <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="{% static 'css/bootstrap.min.css'%}" rel="stylesheet" type="text/css">
+    <link href="{% static 'font-awesome/css/font-awesome.min.css'%}" rel="stylesheet" type="text/css" />
 	
 	<!-- Custom Theme files -->
-	<link href="css/style.css" rel='stylesheet' type='text/css' />
+	<link href="{% static 'css/style.css'%}" rel='stylesheet' type='text/css' />
 	
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-	<script src="js/jquery.min.js"></script>
+	<script src="{% static 'js/jquery.min.js'%}"></script>
 	
 	<!-- Owl Carousel Assets -->
-    <link href="owl-carousel/owl.carousel.css" rel="stylesheet">
-    <link href="owl-carousel/owl.theme.css" rel="stylesheet">
+    <link href="{% static 'owl-carousel/owl.carousel.css'%}" rel="stylesheet">
+    <link href="{% static 'owl-carousel/owl.theme.css'%}" rel="stylesheet">
 
 	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -61,20 +61,18 @@
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav navbar-right">
 					<li>
-                        <a class="page-scroll" href="index.html">Home</a>
+                        <a class="page-scroll" href="">Ana Sayfa</a>
                     </li>
 					<li>
-                        <a class="page-scroll" href="single.html">About</a>
+                        <a class="page-scroll" href="#">Hakkımızda</a>
                     </li>
 					<li>
-                        <a class="page-scroll" href="service.html">Services</a>
+                        <a class="page-scroll" href="login">Giriş Yap</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="archive.html">Blogs</a>
+                        <a class="page-scroll" href="signup">Kayıt Ol</a>
                     </li>
-                    <li>
-                        <a class="page-scroll" href="contact.html">Contacts</a>
-                    </li>
+
 				</ul>
 			</div>
 		</div>
