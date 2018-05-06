@@ -1,7 +1,7 @@
+{% load static %}
+{% load bootstrap3 %}
 <html>
     <head>
-        {% load static %}
-        {% load bootstrap3 %}
         <title>Kan Bankası</title>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
@@ -10,30 +10,6 @@
         <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
     </head>
     <body>
-
-      <nav class="navbar navbar-default" role="navigation">
-        <div class="container">
-          <div class="navbar-header">
-            <a class="navbar-brand" href="#">KAN BANKASI</a>
-            </a>
-          </div>
-          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav navbar-right">
-
-            </ul>
-            <ul class="navbar-nav mr-auto navbar-right" style="margin-right: 0px;margin-left:850px;">
-      {% if not user.is_authenticated %}
-      <li class="nav-item active">
-        <a class="nav-link" href={% url "signup" %}><span class="glyphicon glyphicon-user" style="font-size: 20px;"></span>Kişisel Kayıt Ol</a>
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link" href={% url "login" %}><span class="glyphicon glyphicon-log-in" style="font-size: 20px;"></span>Giriş Yap</a>
-      </li>
-      {%endif%}
-    </ul>
-          </div>
-        </div>
-      </nav>
         <div class="page-header">
             <h1><a href="/">Kan Bankası</a></h1>
         </div>
