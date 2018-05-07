@@ -2,6 +2,19 @@ from django.shortcuts import render
 from django.views import generic
 from kanBankasiApp.models import *
 from kanBankasiApp.forms import *
+from django.contrib.auth.decorators import login_required
+
+def edit_profile(request):
+    if request.method == 'POST':
+        form = RegistrationForm(request.POST, instance=request.user)
+
+        if form.is_valid():
+            form.save()
+            return redirect(reverse('hakkimizda'))
+    else:
+        form = RegistrationForm(instance=request.user)
+        args = {'form': form}
+        return render(request, 'kullaniciProfil.html', args)
 
 class HomePageView(generic.ListView):
 	template_name="home.html"
@@ -32,11 +45,11 @@ class HakkımızdaView(generic.ListView):
 
 	def get_queryset(self):
 		return "hello"
+
 class KurumsalGirisYap(generic.FormView):
 	form_class = KurumsalGirisYapForm
 	template_name = "kurumsalGiris.html"
 	success_url = '/'
 
-def kullaniciProfil(request):
-	profile = Kullanici.objects.filter(user=request.user.id)
-	return render(request, 'kullaniciProfil.html', {'data': profile})
+
+
