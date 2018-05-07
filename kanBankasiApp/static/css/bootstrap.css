@@ -385,3 +385,10 @@ a.btn:focus{outline: 0;}
 .maps iframe{
     pointer-events: none;
 }
+
+div.help-block{
+	display: none;
+}
+
+
+
