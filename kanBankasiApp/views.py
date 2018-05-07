@@ -29,3 +29,7 @@ class HastaneKayit(generic.FormView):
 		form.save()
 		return super().form_valid(form)
 
+class KurumsalGirisYap(generic.FormView):
+	form_class = KurumsalGirisYapForm
+	template_name = "kurumsalGiris.html"
+	success_url = '/'
