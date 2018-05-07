@@ -6,7 +6,7 @@ from django.contrib.auth.forms import UserCreationForm
 class RegistrationForm(UserCreationForm):
 	il_sec=Il.objects.all()
 	ilce_sec = Ilce.objects.all()
-	kanGrubu_sec = kanGrubu.objects.all()
+	kanGrubu_sec = KanGrubu.objects.all()
 	BOOL_CHOICES = ((True, 'Erkek'), (False, 'Kadın'))
 	ad = forms.CharField(max_length=30, required=False, help_text='Optional.')
 	soyad = forms.CharField(max_length=30, required=False, help_text='Optional.')
@@ -21,4 +21,4 @@ class RegistrationForm(UserCreationForm):
 
 	class Meta:
 		model = User
-		fields = ('username','password1','password2','email','ad', 'soyad', 'cinsiyet', 'dogum_tarihi', 'il','ilce' ,'KanGrubu_adi')
+		fields = ('username','password1','password2','email','ad', 'soyad', 'cinsiyet', 'dogum_tarihi', 'il','ilce' ,'kanGrubu')
