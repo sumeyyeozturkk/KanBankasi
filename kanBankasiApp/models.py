@@ -16,8 +16,11 @@ class Ilce(models.Model):
 
 class Hastane(models.Model):
 	hastane_adi = models.CharField(max_length = 100)
+	il= models.ForeignKey(Il,on_delete = models.PROTECT)
 	ilce = models.ForeignKey(Ilce, on_delete = models.PROTECT)
-
+	eposta = models.EmailField(max_length= 50)
+	sifre = models.CharField(max_length = 50)
+	
 	def __str__(self):
 		return self.hastane_adi
 

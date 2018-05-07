@@ -20,3 +20,12 @@ class RegistrationView(generic.FormView):
 		form.save()
 		return super().form_valid(form)
 
+class HastaneKayit(generic.FormView):
+	form_class = HastaneKayitForm
+	template_name = "hastaneKayit.html"
+	success_url = '/'
+	
+	def form_valid(self, form):
+		form.save()
+		return super().form_valid(form)
+
