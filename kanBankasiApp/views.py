@@ -3,8 +3,6 @@ from django.views import generic
 from kanBankasiApp.models import *
 from kanBankasiApp.forms import *
 
-
-
 class HomePageView(generic.ListView):
 	template_name="home.html"
 
