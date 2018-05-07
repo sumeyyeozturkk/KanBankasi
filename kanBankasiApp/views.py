@@ -32,12 +32,9 @@ class HastaneKayit(generic.FormView):
 class HakkımızdaView(generic.ListView):
 	template_name="hakkımızda.html"
 
-<<<<<<< HEAD
 	def get_queryset(self):
 		return "hello"
-=======
 class KurumsalGirisYap(generic.FormView):
 	form_class = KurumsalGirisYapForm
 	template_name = "kurumsalGiris.html"
 	success_url = '/'
->>>>>>> 5785fbde48a001c7d6b9b686c51eed5de2ab9a32
