@@ -24,8 +24,13 @@ class HastaneKayit(generic.FormView):
 	form_class = HastaneKayitForm
 	template_name = "hastaneKayit.html"
 	success_url = '/'
-	
+
 	def form_valid(self, form):
 		form.save()
 		return super().form_valid(form)
+	
+class HakkımızdaView(generic.ListView):
+	template_name="hakkımızda.html"
 
+	def get_queryset(self):
+		return "hello"
