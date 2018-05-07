@@ -41,4 +41,5 @@ class KurumsalGirisYapForm(forms.ModelForm):
             "ilce": HiddenInput(),
         }
 
+				
 
