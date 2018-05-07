@@ -39,18 +39,33 @@
                     <li>
                         <a class="page-scroll" href="">Duyurular</a>
                     </li>
-                    <li>
-                        <a class="page-scroll" href="{% url 'login' %}">Giriş Yap</a>
+                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Giriş Yap <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a class="page-scroll" href="{% url 'login' %}">Bireysel Giriş </a>
+                            </li>
+                            <li>
+                                <a class="page-scroll" href="{% url 'kurumsalgiris' %}"> Kurumsal Giriş</a>
+                            </li>
+                        </ul>
                     </li>
-                    <li>
-                        <a class="page-scroll" href="{% url 'signup' %}">Bireysel Kayıt</a>
+                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Kayıt Ol <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a class="page-scroll" href="{% url 'signup' %}">Bireysel Kayıt</a>
+                            </li>
+                            <li>
+                                <a class="page-scroll" href="{% url 'hastane' %}"> Kurumsal Kayıt</a>
+                            </li>
+                        </ul>
                     </li>
-                    <li>
-                        <a class="page-scroll" href="{% url 'hastane' %}"> Kurumsal Kayıt</a>
-                    </li>
+<<<<<<< HEAD
 
 
                     {% endif %}
+=======
+                    {% endif %} 
+>>>>>>> 5785fbde48a001c7d6b9b686c51eed5de2ab9a32
                 </ul>
             </div>
         </div>

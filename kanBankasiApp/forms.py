@@ -2,6 +2,8 @@ from django import forms
 from .models import *
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
+from django.forms import HiddenInput
+
 
 class RegistrationForm(UserCreationForm):
 	il_sec=Il.objects.all()
@@ -29,5 +31,14 @@ class HastaneKayitForm(forms.ModelForm):
 		model = Hastane
 		fields = ('hastane_adi','il','ilce','eposta','sifre')
 
+class KurumsalGirisYapForm(forms.ModelForm):
+	class Meta:
+		model = Hastane
+		fields = ('hastane_adi','il','ilce','eposta','sifre')
+		widgets = {
+            "hastane_adi": HiddenInput(),
+            "il": HiddenInput(),
+            "ilce": HiddenInput(),
+        }
 
 
