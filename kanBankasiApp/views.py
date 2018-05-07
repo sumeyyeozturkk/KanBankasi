@@ -6,7 +6,7 @@ from kanBankasiApp.forms import *
 
 
 class HomePageView(generic.ListView):
-	template_name="index.html"
+	template_name="home.html"
 
 	def get_queryset(self):
 		return "helo"

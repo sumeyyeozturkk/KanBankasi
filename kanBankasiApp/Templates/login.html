@@ -1,12 +1,10 @@
-
 {% extends 'base.html' %}
 {% load bootstrap3 %}
 {% block content %}
-<center>
-	<div class="jumbotron">
-    <div class="container">
+  <div class="jumbotron" align="center">
+    <div class="container" align="center">
       <form class="form-signin" method="post" action="">
-        <h2 class="form-signin-heading">Please Login</h2>
+        <h2 class="form-signin-heading">Lütfen Giriş Yapın</h2>
         <div class="col-md-4"></div>
         <div class="col-md-4">
           {% csrf_token %}
@@ -16,11 +14,10 @@
         </div>
         <div class="col-md-12">
           <p class="lead">
-            <button class="btn btn-success" type="submit">Login</button>
+            <button class="btn btn-success" type="submit">GİRİŞ</button>
           </p>
         </div>
       </form>
     </div>
-	</div>
-</center>
+  </div>
 {% endblock %}
