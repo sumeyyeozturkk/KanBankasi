@@ -390,3 +390,6 @@ div.help-block{
 	display: none;
 }
 
+nav.navbar-default{
+	background: #ff3333;
+}
