@@ -36,3 +36,7 @@ class KurumsalGirisYap(generic.FormView):
 	form_class = KurumsalGirisYapForm
 	template_name = "kurumsalGiris.html"
 	success_url = '/'
+
+def kullaniciProfil(request):
+	profile = Kullanici.objects.filter(user=request.user.id)
+	return render(request, 'kullaniciProfil.html', {'data': profile})

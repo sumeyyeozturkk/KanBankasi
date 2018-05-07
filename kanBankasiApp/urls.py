@@ -2,6 +2,7 @@ from django.conf.urls import url
 from django.contrib import admin
 from django.contrib.auth import views as auth_views
 from kanBankasiApp.views import *
+from kanBankasiApp import views
 
 urlpatterns = [
 	url(r'^$', HomePageView.as_view(),name ='home'),
@@ -11,5 +12,7 @@ urlpatterns = [
     url(r'^hastane/$', HastaneKayit.as_view(),name ='hastane'),
 	url(r'^hakkimizda/$',HakkımızdaView.as_view(),name='hakkimizda'),
     url(r'^kurumsalgiris/$', KurumsalGirisYap.as_view(),name='kurumsalgiris'),
+    url(r'^kullaniciProfil/$', views.kullaniciProfil, name = 'kullaniciProfil'),
+
 
 ]

@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load bootstrap3 %}
+{% block content %}
+    <ul>
+    <h2>Kullanıcı Profil </h2>
+      {% for pro in data %}
+      	<div class="container">
+      		<li>
+              User: {{pro.user}} <br>
+              Ad: {{pro.ad}} <br>
+              Soyad: {{pro.soyad}}<br>
+              Email: {{pro.email}} <br>
+              Telefon: {{pro.telefon}} <br>
+              Doğum Tarihi: {{pro.dogum_tarihi}} <br>
+              Cinsiyet: {{pro.gender}} <br> 
+              İl : {{pro.il}} <br> 
+              İlçe: {{pro.ilce}} <br> 
+              Kan Grubu : {{pro.kanGrubu}} <br> 
+      		</li> 
+      	</div>
+      {% empty %}
+      <li> Kullanıcı Bulunamadı. </li>
+      {% endfor %}
+    </ul>
+{% endblock %}
