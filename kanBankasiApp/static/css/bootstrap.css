@@ -391,9 +391,11 @@ div.help-block{
 }
 
 nav.navbar-default{
-	background: #ff3333;
+	background: #ffffff;
 }
 
 .navbar-default .navbar-nav>li>a {
-    color: #ffffff;
+    color: #777;
+    margin-top: 14px;
+    margin-bottom: 14px;
 }
