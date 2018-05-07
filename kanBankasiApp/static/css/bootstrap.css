@@ -393,3 +393,7 @@ div.help-block{
 nav.navbar-default{
 	background: #ff3333;
 }
+
+.navbar-default .navbar-nav>li>a {
+    color: #ffffff;
+}
