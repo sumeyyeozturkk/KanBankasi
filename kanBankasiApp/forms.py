@@ -13,11 +13,10 @@ class RegistrationForm(UserCreationForm):
 	email = forms.EmailField(max_length=254, help_text='Required. Inform a valid email address.')
 	cinsiyet = forms.TypedChoiceField(choices=BOOL_CHOICES, widget=forms.RadioSelect(attrs=dict(required=True)),coerce=bool)
 	dogum_tarihi = forms.DateField(label='Date of birth', widget=forms.SelectDateWidget(years=range(1950, 2000)))
-	il = forms.ModelChoiceField(queryset=il_sec, widget=forms.Select(attrs=dict(required=True,placeholder='Il')))
-	print(il)
-	ilce = forms.ModelChoiceField(queryset=ilce_sec, widget=forms.Select(attrs=dict(required=True,placeholder='Ilce')))
-	telefon = forms.CharField(max_length =11 ,widget=forms.TextInput(attrs=dict(required=True,placeholder='telefon')))
-	kanGrubu = forms.ModelChoiceField(queryset=kanGrubu_sec, widget=forms.Select(attrs=dict(required=True,placeholder='kanGrubu')))
+	il = forms.ModelChoiceField(queryset=il_sec, widget=forms.Select(attrs=dict(required=True,placeholder='İl')))
+	ilce = forms.ModelChoiceField(queryset=ilce_sec, widget=forms.Select(attrs=dict(required=True,placeholder='İlçe')))
+	telefon = forms.CharField(max_length =11 ,widget=forms.TextInput(attrs=dict(required=True,placeholder='Telefon')))
+	kanGrubu = forms.ModelChoiceField(queryset=kanGrubu_sec, widget=forms.Select(attrs=dict(required=True,placeholder='Kan Grubu')))
 
 	class Meta:
 		model = User
