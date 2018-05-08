@@ -112,6 +112,11 @@ class HakkımızdaView(generic.ListView):
 	def get_queryset(self):
 		return "hello"
 
+class HakkımızdaView2(generic.ListView):
+	template_name="hakkımızda2.html"
+
+	def get_queryset(self):
+		return "hello"
 # class KurumsalGirisYap(generic.FormView):
 # 	form_class = KurumsalGirisYapForm
 # 	template_name = "kurumsalGiris.html"

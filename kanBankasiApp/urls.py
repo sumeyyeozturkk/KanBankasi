@@ -11,6 +11,7 @@ urlpatterns = [
     url(r'^signup/$',KayitOlView.as_view(),name='signup'),
     url(r'^hastane/$', HastaneKayit.as_view(),name ='hastane'),
 	url(r'^hakkimizda/$',HakkımızdaView.as_view(),name='hakkimizda'),
+    url(r'^hakkimizda2/$',HakkımızdaView2.as_view(),name='hakkimizda2'),
     url(r'^kurumsalgiris/$', views.giris,name='kurumsalgiris'),
     url(r'^kullaniciProfil/$', views.user_profile, name = 'kullaniciProfil'),
     url(r'^profilOlusturma/$', ProfilOlusturmaView.as_view(), name = 'profilOlusturma'),
