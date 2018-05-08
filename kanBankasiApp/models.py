@@ -1,5 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 
 class Il(models.Model):
 	il_adi = models.CharField(max_length = 30)
@@ -25,7 +27,7 @@ class Hastane(models.Model):
 		return self.hastane_adi
 
 class Rol(models.Model):
-	rol_adi = models.CharField(max_length = 20)
+	rol_adi = models.CharField(max_length = 20, null=True)
 
 class KanGrubu(models.Model):
 	KanGrubu_adi = models.CharField(max_length = 20)
@@ -44,7 +46,18 @@ class Kullanici(models.Model):
 	il = models.ForeignKey(Il, on_delete= models.PROTECT)
 	ilce = models.ForeignKey(Ilce, on_delete = models.PROTECT)
 	kanGrubu = models.ForeignKey(KanGrubu, on_delete = models.PROTECT)
-	rol = models.ForeignKey(Rol, on_delete = models.PROTECT)
+	rol = models.ForeignKey(Rol, on_delete = models.PROTECT , null=True)
+
+	def __str__(self):
+		return self.user.username
+	# @receiver(post_save, sender=User)
+	# def create_kullanici_profile(sender, instance, created, **kwargs):
+	#     if created:
+ #        	Kullanici.objects.create(user=instance)
+
+	# @receiver(post_save, sender=User)
+	# def save_user_kullanici(sender, instance, **kwargs):
+ #    		instance.profile.save()
 
 class Stok(models.Model):
 	stokMiktari = models.IntegerField(default = 0)

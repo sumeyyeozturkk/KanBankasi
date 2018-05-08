@@ -3,6 +3,8 @@ from django.views import generic
 from kanBankasiApp.models import *
 from kanBankasiApp.forms import *
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
+
 
 def edit_profile(request):
     if request.method == 'POST':
@@ -23,13 +25,29 @@ class HomePageView(generic.ListView):
 		return "helo"
 
 class RegistrationView(generic.FormView):
-	form_class = RegistrationForm
+	form_class = UserForm
 	template_name = "signup.html"
 	success_url = '/login'
 
 	def form_valid(self, form):
 		form.save()
 		return super().form_valid(form)
+
+
+class ProfilOlusturmaView(LoginRequiredMixin ,generic.CreateView):
+	form_class = ProfilForm
+	template_name ="ProfilOlusturma.html"
+	success_url = '/'
+
+	def get_form_kwargs(self):
+		kwargs = super().get_form_kwargs()
+		if self.request.method in ["POST"]:
+			post_data = kwargs["data"].copy()
+			user = self.request.user.id
+			post_data["user"] = user
+			kwargs["data"] = post_data
+		return kwargs
+
 
 class HastaneKayit(generic.FormView):
 	form_class = HastaneKayitForm
