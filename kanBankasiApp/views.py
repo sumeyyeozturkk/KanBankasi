@@ -62,6 +62,15 @@ class KayitOlView(generic.FormView):
 		form.save()
 		return super().form_valid(form)
 
+class DuyuruYapView(generic.FormView):
+	form_class = DuyuruForm
+	template_name = "duyuruYap.html"
+	success_url = '/duyurular'
+
+	def form_valid(self, form):
+		form.save()
+		return super().form_valid(form)
+
 class ProfilOlusturmaView(LoginRequiredMixin ,generic.CreateView):
 	form_class = ProfilForm
 	template_name ="ProfilOlusturma.html"
