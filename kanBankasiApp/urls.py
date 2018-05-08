@@ -13,6 +13,7 @@ urlpatterns = [
 	url(r'^hakkimizda/$',HakkımızdaView.as_view(),name='hakkimizda'),
     url(r'^kurumsalgiris/$', KurumsalGirisYap.as_view(),name='kurumsalgiris'),
     url(r'^kullaniciProfil/$', views.edit_profile, name = 'kullaniciProfil'),
+	url(r'^duyurular/$',DuyurularView.as_view(),name='duyurular'),
 
 
 ]
