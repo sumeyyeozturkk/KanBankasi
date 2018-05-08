@@ -55,13 +55,14 @@ class DuyuruForm(forms.ModelForm):
 	il_sec = Il.objects.all()
 	ilce_sec = Ilce.objects.all()
 	kanGrubu_sec = KanGrubu.objects.all()
-	duyuru_tarih = forms.DateField(label='Date of birth', widget=forms.SelectDateWidget(years=range(1950, 2000)))
+	duyuru_tarih = forms.DateField(label='Duyuru Son Tarih', widget=forms.SelectDateWidget())
 	il = forms.ModelChoiceField(queryset=il_sec, widget=forms.Select(attrs=dict(required=True,placeholder='İl')))
 	ilce = forms.ModelChoiceField(queryset=ilce_sec, widget=forms.Select(attrs=dict(required=True,placeholder='İlçe')))
 	kanGrubu = forms.ModelChoiceField(queryset=kanGrubu_sec, widget=forms.Select(attrs=dict(required=True,placeholder='KanGrubu')))
 	aciklama = forms.TextInput()
 	class Meta:
 		model = Duyuru
+		exclude = ['user.id']
 		fields = ('duyuru_tarih','aciklama','il','ilce','kanGrubu')
 		widgets = {
 		"user":HiddenInput()

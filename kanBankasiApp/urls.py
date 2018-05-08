@@ -14,7 +14,7 @@ urlpatterns = [
     url(r'^kurumsalgiris/$', views.giris,name='kurumsalgiris'),
     url(r'^kullaniciProfil/$', views.user_profile, name = 'kullaniciProfil'),
     url(r'^profilOlusturma/$', ProfilOlusturmaView.as_view(), name = 'profilOlusturma'),
-	url(r'^duyurular/$',DuyurularView.as_view(),name='duyurular'),
+	url(r'^duyurular/$',DuyuruListView.as_view(),name='duyurular'),
     url(r'^duyuruYap/$',DuyuruYapView.as_view(),name='duyuruYap'),
 
 

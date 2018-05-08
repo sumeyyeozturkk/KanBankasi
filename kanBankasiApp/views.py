@@ -71,6 +71,16 @@ class DuyuruYapView(generic.FormView):
 		form.save()
 		return super().form_valid(form)
 
+class DuyuruListView(LoginRequiredMixin,generic.ListView):
+	template_name = "duyurular.html"
+	def get_queryset(self):
+		return Duyuru.objects.all()
+
+	def get_context_data(self, **kwargs):
+		context = super().get_context_data(**kwargs)
+		context["duyurulist"] = Duyuru.objects.all()
+		return context
+
 class ProfilOlusturmaView(LoginRequiredMixin ,generic.CreateView):
 	form_class = ProfilForm
 	template_name ="ProfilOlusturma.html"
@@ -84,6 +94,7 @@ class ProfilOlusturmaView(LoginRequiredMixin ,generic.CreateView):
 			post_data["user"] = user
 			kwargs["data"] = post_data
 		return kwargs
+
 
 
 class HastaneKayit(generic.FormView):
@@ -107,11 +118,11 @@ class HakkımızdaView(generic.ListView):
 # 	success_url = '/'
 
 
-class DuyurularView(generic.ListView):
-    template_name="duyurular.html"
+# class DuyurularView(generic.ListView):
+#     template_name="duyurular.html"
 
-    def get_queryset(self):
-        return "hello"
+#     def get_queryset(self):
+#         return "hello"
 
 
 def giris(request):

@@ -70,7 +70,5 @@ class Duyuru(models.Model):
 	il = models.ForeignKey(Il, on_delete= models.PROTECT)
 	ilce = models.ForeignKey(Ilce, on_delete = models.PROTECT)
 	kanGrubu = models.ForeignKey(KanGrubu, on_delete = models.PROTECT)
-	kullanici = models.ForeignKey(User,on_delete = models.PROTECT)
-
 
 
