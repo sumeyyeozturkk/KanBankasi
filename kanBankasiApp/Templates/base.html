@@ -2,7 +2,8 @@
 {% load bootstrap3 %}
 <html>
     <head>
-        <title>Kan Bankası</title>
+        <title>KAN BANKASI</title>
+        <link rel="shortcut icon" href="{% static "kanbankasilogo.png" %}" type="image/png">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
         <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
@@ -69,7 +70,7 @@
 
                     {% if user.is_authenticated %}
                      <li>
-                         <a class="page-scroll" href="">Ana Sayfa </a>
+                         <a class="page-scroll" href="{% url 'home' %}">Ana Sayfa </a>
                      </li>
                      <li>
                          <a class="page-scroll" href="{% url 'hakkimizda' %}">Hakkımızda</a>
@@ -78,7 +79,7 @@
                          <a class="page-scroll" href="{% url 'duyurular' %}">Duyurular</a>
                      </li>
                      <li>
-                         <a class="page-scroll" href="{% url 'kullaniciProfil' %}">Profilim</a>
+                         <a class="page-scroll" href="{% url 'profilOlusturma' %}">Profilim</a>
                      </li>
                      <li >
                           <a class="page-scroll" href="{% url 'logout' %}">Çıkış Yap</a>
