@@ -68,7 +68,7 @@
                 <ul class="nav navbar-nav navbar-right">
 					{% if user.is_authenticated %}
                      <li>
-                         <a class="page-scroll" href="">Ana Sayfa </a>
+                         <a class="page-scroll" href="{% url 'home' %}">Ana Sayfa </a>
                      </li>
                      <li>
                          <a class="page-scroll" href="{% url 'hakkimizda' %}">Hakkımızda</a>
@@ -77,7 +77,7 @@
                          <a class="page-scroll" href="{% url 'duyurular' %}">Duyurular</a>
                      </li>
                      <li>
-                         <a class="page-scroll" href="{% url 'kullaniciProfil' %}">Profilim</a>
+                         <a class="page-scroll" href="{% url 'profilOlusturma' %}">Profilim</a>
                      </li>
                      <li >
                           <a class="page-scroll" href="{% url 'logout' %}">Çıkış Yap</a>
