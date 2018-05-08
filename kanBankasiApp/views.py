@@ -57,7 +57,7 @@ class HastaneKayit(generic.FormView):
 	def form_valid(self, form):
 		form.save()
 		return super().form_valid(form)
-	
+
 class HakkımızdaView(generic.ListView):
 	template_name="hakkımızda.html"
 
@@ -69,5 +69,8 @@ class KurumsalGirisYap(generic.FormView):
 	template_name = "kurumsalGiris.html"
 	success_url = '/'
 
+class DuyurularView(generic.ListView):
+    template_name="duyurular.html"
 
-
+    def get_queryset(self):
+        return "hello"
