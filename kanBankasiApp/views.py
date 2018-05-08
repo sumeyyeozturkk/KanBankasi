@@ -2,21 +2,50 @@ from django.shortcuts import render
 from django.views import generic
 from kanBankasiApp.models import *
 from kanBankasiApp.forms import *
+from django.http import *
+from django.contrib.auth import *
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 
 
-def edit_profile(request):
-    if request.method == 'POST':
-        form = RegistrationForm(request.POST, instance=request.user)
+# def edit_profile(request):
+#     if request.method == 'POST':
+#         form = ProfilForm(request.POST, instance=request.user)
 
-        if form.is_valid():
-            form.save()
-            return redirect(reverse('hakkimizda'))
-    else:
-        form = RegistrationForm(instance=request.user)
-        args = {'form': form}
-        return render(request, 'kullaniciProfil.html', args)
+#         if form.is_valid():
+#             form.save()
+#             return redirect(reverse('hakkimizda'))
+#     else:
+#         form = ProfilForm(instance=request.user)
+#         args = {'form': form}
+#         return render(request, 'kullaniciProfil.html', args)
+
+def user_profile(request):
+	# if request.method == 'GET':
+	# 	if not Kullanici.objects.filter(user=request.user.id):
+	# 		Kullanici.objects.create(user=request.user)
+	if request.method == 'POST':
+		form = ProfilForm(request.POST,instance=request.user.profile)
+		if form.is_valid():
+			user = request.user
+			kullanici = Kullanici.objects.filter(user=request.user.id)
+			kullanici.update(
+			user = user,
+			ad = form.cleaned_data['ad'],
+			soyad = form.cleaned_data['soyad'],
+			cinsiyet = form.cleaned_data['cinsiyet'],
+			dogum_tarihi = form.cleaned_data['dogum_tarihi'],
+			il = form.cleaned_data['il'],
+			ilce = form.cleaned_data['ilce'],
+			kanGrubu = form.cleaned_data['kanGrubu']
+			)
+			return HttpResponseRedirect('/hakkimizda')
+		else:
+			form = ProfilForm(instance=request.user.profile)
+	form = ProfilForm()
+	return render(request,'kullaniciProfil.html',{'form': form})
+
+
 
 class HomePageView(generic.ListView):
 	template_name="home.html"
@@ -24,7 +53,7 @@ class HomePageView(generic.ListView):
 	def get_queryset(self):
 		return "helo"
 
-class RegistrationView(generic.FormView):
+class KayitOlView(generic.FormView):
 	form_class = UserForm
 	template_name = "signup.html"
 	success_url = '/login'
@@ -32,7 +61,6 @@ class RegistrationView(generic.FormView):
 	def form_valid(self, form):
 		form.save()
 		return super().form_valid(form)
-
 
 class ProfilOlusturmaView(LoginRequiredMixin ,generic.CreateView):
 	form_class = ProfilForm
@@ -64,13 +92,25 @@ class HakkımızdaView(generic.ListView):
 	def get_queryset(self):
 		return "hello"
 
-class KurumsalGirisYap(generic.FormView):
-	form_class = KurumsalGirisYapForm
-	template_name = "kurumsalGiris.html"
-	success_url = '/'
+# class KurumsalGirisYap(generic.FormView):
+# 	form_class = KurumsalGirisYapForm
+# 	template_name = "kurumsalGiris.html"
+# 	success_url = '/'
+
 
 class DuyurularView(generic.ListView):
     template_name="duyurular.html"
 
     def get_queryset(self):
         return "hello"
+
+
+def giris(request):
+    form = KurumsalGirisYapForm
+    if(request.method=='POST'):
+        giris_kontrol = KurumsalGirisYapForm(data=request.POST)
+        if(giris_kontrol.is_valid()):
+        	eposta = form.cleaned_data['eposta'],
+        	sifre = form.cleaned_data['sifre'],
+        return HttpResponseRedirect('/hakkimizda')
+    return render(request,'kurumsalGiris.html',locals())

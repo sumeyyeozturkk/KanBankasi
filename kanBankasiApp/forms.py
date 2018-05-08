@@ -34,13 +34,14 @@ class ProfilForm(forms.ModelForm):
 		}
 
 class HastaneKayitForm(forms.ModelForm):
-	#sifre = forms.CharField(widget=forms.PasswordInput)
+	sifre = forms.CharField(widget=forms.PasswordInput)
 
 	class Meta:
 		model = Hastane
 		fields = ('hastane_adi','il','ilce','eposta','sifre')
 
 class KurumsalGirisYapForm(forms.ModelForm):
+	sifre = forms.CharField(widget=forms.PasswordInput)
 	class Meta:
 		model = Hastane
 		fields = ('hastane_adi','il','ilce','eposta','sifre')
