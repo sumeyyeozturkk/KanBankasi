@@ -9,23 +9,6 @@
       <div class="row"> 
         <div class="col-md-4">
           <article class="box-shadow text-center">
-{% for duyuru in duyurulist%}
-            <div class="art-header">  
-              <div class="zoom-container">
-                <img class="example-image" src="{% static "heart.png" %}" alt="" style="height: 250px; width: 200px;"/>
-              </div>
-            </div>
-            <div class="art-content">
-              
-              <h3>DUYURU</h3>
-              <p>{{duyuru.aciklama}}</p>
-            </div>
-            {%endfor%}
-          </article>
-        </div>
-
-        <!-- <div class="col-md-4">
-          <article class="box-shadow text-center">
             <div class="art-header">  
               <div class="zoom-container">
                 <img class="example-image" src="{% static "heart.png" %}" alt="" style="height: 250px; width: 200px;"/>
@@ -38,48 +21,6 @@
           </article>
         </div>
 
-        <div class="col-md-4">
-          <article class="box-shadow text-center">
-            <div class="art-header">  
-              <div class="zoom-container">
-                <img class="example-image" src="{% static "heart.png" %}" alt="" style="height: 250px; width: 200px;"/>
-              </div>
-            </div>
-            <div class="art-content">
-              <h3>DUYURU</h3>
-              <p>This format perfectly fits in case you need only a single image for your post display. Use Featured image option to add image to the...</p>
-            </div>
-          </article>
-        </div>
-
-        <div class="col-md-4">
-          <article class="box-shadow text-center">
-            <div class="art-header">  
-              <div class="zoom-container">
-                <img class="example-image" src="{% static "heart.png" %}" alt="" style="height: 250px; width: 200px;"/>
-              </div>
-            </div>
-            <div class="art-content">
-              <h3>DUYURU</h3>
-              <p>This format perfectly fits in case you need only a single image for your post display. Use Featured image option to add image to the...</p>
-            </div>
-          </article>
-        </div> -->
-
-        <!-- <div class="col-md-4">
-          <article class="box-shadow text-center">
-            <div class="art-header">  
-              <div class="zoom-container">
-                <img class="example-image" src="{% static "heart.png" %}" alt="" style="height: 250px; width: 200px;"/>
-              </div>
-            </div>
-            <div class="art-content">
-              <h3>DUYURU</h3>
-              <p>This format perfectly fits in case you need only a single image for your post display. Use Featured image option to add image to the...</p>
-            </div>
-          </article>
-        </div>
- -->
 <!--         <div class="col-md-4">
           <article class="box-shadow text-center">
             <div class="art-header">  
@@ -89,9 +30,79 @@
             </div>
             <div class="art-content">
               <h3>DUYURU</h3>
-              <p>This format perfectly fits in case you need only a single image for your post display. Use Featured image option to add image to the...</p>
+              {% for duyuru in duyurulist %}
+                <td> Açıklama </td>
+                <td> {{ duyuru.aciklama }} </td>
+              {% endfor %}
             </div>
           </article>
         </div> -->
+          <div class="col-md-4">
+          <article class="box-shadow text-center">
+            <div class="art-header">  
+              <div class="zoom-container">
+                <img class="example-image" src="{% static "heart.png" %}" alt="" style="height: 250px; width: 200px;"/>
+              </div>
+            </div>
+            <div class="art-content">
+              <h3>DUYURU</h3>
+              <p>This format perfectly fits in case you need only a single image for your post display. Use Featured image option to add image to the...</p>
+            </div>
+          </article>
+        </div>
+        <div class="col-md-4">
+          <article class="box-shadow text-center">
+            <div class="art-header">  
+              <div class="zoom-container">
+                <img class="example-image" src="{% static "heart.png" %}" alt="" style="height: 250px; width: 200px;"/>
+              </div>
+            </div>
+            <div class="art-content">
+              <h3>DUYURU</h3>
+              <p>This format perfectly fits in case you need only a single image for your post display. Use Featured image option to add image to the...</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="col-md-4">
+          <article class="box-shadow text-center">
+            <div class="art-header">  
+              <div class="zoom-container">
+                <img class="example-image" src="{% static "heart.png" %}" alt="" style="height: 250px; width: 200px;"/>
+              </div>
+            </div>
+            <div class="art-content">
+              <h3>DUYURU</h3>
+              <p>This format perfectly fits in case you need only a single image for your post display. Use Featured image option to add image to the...</p>
+            </div>
+          </article>
+        </div> 
+
+        <div class="col-md-4">
+          <article class="box-shadow text-center">
+            <div class="art-header">  
+              <div class="zoom-container">
+                <img class="example-image" src="{% static "heart.png" %}" alt="" style="height: 250px; width: 200px;"/>
+              </div>
+            </div>
+            <div class="art-content">
+              <h3>DUYURU</h3>
+              <p>This format perfectly fits in case you need only a single image for your post display. Use Featured image option to add image to the...</p>
+            </div>
+          </article>
+        </div>
+      <div class="col-md-4">
+          <article class="box-shadow text-center">
+            <div class="art-header">  
+              <div class="zoom-container">
+                <img class="example-image" src="{% static "heart.png" %}" alt="" style="height: 250px; width: 200px;"/>
+              </div>
+            </div>
+            <div class="art-content">
+              <h3>DUYURU</h3>
+              <p>This format perfectly fits in case you need only a single image for your post display. Use Featured image option to add image to the...</p>
+            </div>
+          </article>
+        </div> 
 
 {% endblock %}
