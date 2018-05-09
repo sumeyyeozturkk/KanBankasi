@@ -50,14 +50,6 @@ class Kullanici(models.Model):
 
 	def __str__(self):
 		return self.user.username
-	# @receiver(post_save, sender=User)
-	# def create_kullanici_profile(sender, instance, created, **kwargs):
-	#     if created:
- #        	Kullanici.objects.create(user=instance)
-
-	# @receiver(post_save, sender=User)
-	# def save_user_kullanici(sender, instance, **kwargs):
- #    		instance.profile.save()
 
 class Stok(models.Model):
 	stokMiktari = models.IntegerField(default = 0)

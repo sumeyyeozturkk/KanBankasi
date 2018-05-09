@@ -71,7 +71,7 @@ class DuyuruYapView(generic.FormView):
 		form.save()
 		return super().form_valid(form)
 
-class DuyuruListView(LoginRequiredMixin,generic.ListView):
+class DuyuruListView(generic.ListView):
 	template_name = "duyurular.html"
 	def get_queryset(self):
 		return Duyuru.objects.all()
@@ -94,7 +94,6 @@ class ProfilOlusturmaView(LoginRequiredMixin ,generic.CreateView):
 			post_data["user"] = user
 			kwargs["data"] = post_data
 		return kwargs
-
 
 
 class HastaneKayit(generic.FormView):

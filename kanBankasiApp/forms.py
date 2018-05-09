@@ -62,9 +62,5 @@ class DuyuruForm(forms.ModelForm):
 	aciklama = forms.TextInput()
 	class Meta:
 		model = Duyuru
-		exclude = ['user.id']
 		fields = ('duyuru_tarih','aciklama','il','ilce','kanGrubu')
-		widgets = {
-		"user":HiddenInput()
-		}
 		
